@@ -1,0 +1,77 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.example.selflocationmanagement"
+        minSdkVersion 24
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    // 안드로이드 ui 라이브러리
+
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+    implementation files('libs\\jsoup-1.13.1.jar')
+    implementation 'com.google.android.gms:play-services-maps:17.0.1'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    //네이버 지도 SDK 의존성
+
+    implementation 'com.naver.maps:map-sdk:3.11.0'
+    //네이버 지도 위치추적 의존성
+
+    implementation 'com.google.android.gms:play-services-location:18.0.0'
+    implementation 'com.sothree.slidinguppanel:library:3.4.0'
+    // 슬라이딩 패널을 위한 라이브러리
+
+    implementation "androidx.drawerlayout:drawerlayout:1.1.1"
+    // drawerlayout 사용을 위한 라이브러리
+
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    // recyclerview 구현 및 cardview 구현을 위한 종속
+
+    implementation 'androidx.room:room-runtime:2.3.0'
+    annotationProcessor 'androidx.room:room-compiler:2.3.0'
+    androidTestImplementation 'androidx.room:room-testing:2.3.0'
+    // room 사용을 위한 종속성
+
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    annotationProcessor 'android.arch.lifecycle:common-java8:1.1.1'
+    // lifecycle 구성요소
+
+    androidTestImplementation 'androidx.arch.core:core-testing:2.1.0'
+
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+    // Glide 라이브러리 : 이미지를 빠르고 쉽게 가져오는 라이브러리
+
+
+
+}

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:contentInsetStart="0dp">
+
+        <include layout="@layout/custom_actionbar"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+
+
+    <LinearLayout
+        android:id="@+id/slidepage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/slideup_bg"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:scrollbarFadeDuration="0"
+        android:scrollbarSize="5dp"
+        android:scrollbarThumbVertical="@android:color/darker_gray"
+        android:scrollbars="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="vertical">
+        <TableLayout
+            android:id="@+id/table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:gravity="center"
+            android:stretchColumns="*">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="3dp"
+                android:textStyle="bold">
+            <EditText
+                android:id="@+id/editview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:hint="값"
+                />
+
+                <ImageButton
+                    android:id="@+id/buttonsearch1"
+                    android:layout_width="18dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="right"
+                    android:background="@drawable/search_box"
+                    android:gravity="center"
+                    android:onClick="sideBar_BtnClick3"
+                    android:padding="5dp"
+                    android:text="검색"
+                    android:textColor="#ffffff"
+                    />
+            </TableRow>
+        </TableLayout>
+
+
+
+        </LinearLayout>
+
+        <TableLayout
+            android:id="@+id/table2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:gravity="center"
+            android:stretchColumns="*">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="3dp"
+                android:textStyle="bold">
+
+                <ImageButton
+                    android:id="@+id/buttonsort"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:background="@drawable/chart_box"
+                    android:gravity="center"
+                    android:onClick="sideBar_BtnClick3"
+                    android:padding="0sp"
+                    android:scaleType="centerCrop" />
+
+<!--                <Button-->
+<!--                    android:id="@+id/buttoninsert"-->
+<!--                    android:layout_width="40dp"-->
+<!--                    android:layout_height="30dp"-->
+<!--                    android:layout_gravity="right"-->
+<!--                    android:background="#FF00FF"-->
+<!--                    android:gravity="center"-->
+<!--                    android:onClick="sideBar_BtnClick3"-->
+<!--                    android:text="+"-->
+<!--                    android:textColor="#ffffff" />-->
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/addMemo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_margin="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:src="@drawable/ic_add"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </TableRow>
+        </TableLayout>
+
+
+        <LinearLayout
+            android:id="@+id/slidepage2"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_gravity="center"
+            android:background="@drawable/slideup_bg"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbarFadeDuration="0"
+                android:scrollbarSize="5dp"
+                android:scrollbarThumbVertical="@android:color/darker_gray"
+                android:scrollbars="vertical"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+

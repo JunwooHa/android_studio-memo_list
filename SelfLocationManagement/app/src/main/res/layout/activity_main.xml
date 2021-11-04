@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
+    android:scrollbars="vertical"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:contentInsetStart="0dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include layout="@layout/custom_actionbar"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+        <com.sothree.slidinguppanel.SlidingUpPanelLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/slidinglayout"
+            tools:context=".MainActivity"
+            android:gravity="bottom"
+            app:umanoDragView="@id/slidepage"
+            app:umanoScrollableView="@id/recyclerView"
+            app:umanoPanelHeight="40dp"
+            app:umanoOverlay="true"
+            app:umanoParallaxOffset="200dp"
+            app:umanoShadowHeight="0dp"
+
+            >
+        <!-- gravity 를 bottom으로 하면 아래에서 위로 드래그, top으로 하면 위에서 아래로 드래그 할 수 있다.
+             umanoDragView 드래그 해서 보여줄 view를 선택
+             umanoScrollableView  슬라이딩 패널에 내용물이 패널에 표시되는것보다 많을 때 스크롤 해서 보여줄 view 부분
+             umanoParallaxOffset 에 값을 주면 해당 높이만큼 뒤에 화면을 올려준다.
+             umanoShadowHeight 는 슬라이딩 패널 윗부분에 그림자 효과
+             umanoOverlay 를 false로 해주면 슬라이딩 패널이 위로 보이고 뒷 부분은 반투명하게 보인다. -->
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <com.naver.maps.map.MapView
+                    android:id="@+id/map"
+                    android:name="com.naver.maps.map.MapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+
+            </LinearLayout>
+
+            <!--    네이버 지도 api -->
+
+            <!-- *** layout_height를 0dp로 놓으면 아무런 크기를 주지 않는 것 처럼 보이지만 사실 match_constraint(constraint 설정된 영역 중
+             가능한 영역 채우기)가 적용되어 크기를 맞출 수 있다. *** -->
+
+            <LinearLayout
+                android:id="@+id/slidepage"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:background="@drawable/slideup_bg"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="60dp"
+                        android:layout_height="7dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/slideup_btn"
+                        android:gravity="center"
+                        android:text="" />
+
+                </LinearLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+
+            </LinearLayout>
+
+        </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+        <include layout="@layout/sidebar" />
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

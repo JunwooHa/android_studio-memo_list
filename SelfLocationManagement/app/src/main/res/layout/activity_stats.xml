@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:contentInsetStart="0dp">
+
+        <include layout="@layout/custom_actionbar_backpress"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="COVID-19 진주 통계"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        />
+
+    <TableLayout
+        android:id="@+id/table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:gravity="center"
+        android:stretchColumns="*"
+        >
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/round"
+            android:padding="4dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center">
+            <TextView android:text="확진자 통계" android:gravity="center" android:textColor="@color/white" android:textSize="20sp" android:textStyle="bold"/>
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/round2"
+            android:padding="3dp"
+            android:textStyle="bold">
+            <TextView android:text="총 확진자 수" android:gravity="center" android:textColor="@color/white" android:textSize="15sp" android:textStyle="bold"/>
+            <TextView android:text="완치환자" android:gravity="center" android:textColor="@color/white" android:textSize="15sp" android:textStyle="bold"/>
+            <TextView android:text="입원중" android:gravity="center" android:textColor="@color/white" android:textSize="15sp" android:textStyle="bold"/>
+            <TextView android:text="사망자" android:gravity="center" android:textColor="@color/white" android:textSize="15sp" android:textStyle="bold"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView android:id="@+id/stats_total" android:gravity="center"/>
+            <TextView android:id="@+id/stats_cured" android:gravity="center"/>
+            <TextView android:id="@+id/stats_inhospital" android:gravity="center"/>
+            <TextView android:id="@+id/stats_death" android:gravity="center"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/round2"
+            android:padding="3dp"
+            android:gravity="center"
+            android:textStyle="bold">
+            <TextView android:text="검사 중" android:gravity="center" android:textColor="@color/white" android:textSize="15sp" android:textStyle="bold"/>
+            <TextView android:text="자가 격리자" android:gravity="center" android:textColor="@color/white" android:textSize="15sp" android:textStyle="bold"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+            <TextView android:id="@+id/stats_cur_inspect" android:gravity="center"/>
+            <TextView android:id="@+id/stats_self_isol" android:gravity="center"/>
+        </TableRow>
+
+    </TableLayout>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="확진자 동향"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        />
+
+    <LinearLayout
+        android:id="@+id/slidepage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:background="@drawable/slideup_bg"
+        android:gravity="center">
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="비고 내용"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        />
+
+</LinearLayout>
